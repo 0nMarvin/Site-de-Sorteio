@@ -4,13 +4,21 @@ function sorteio(max){
     return;
     }
 
-    let sorteado = [];
+    // let evitar = [];
+    // for (let i = 0; i < max; i++){
+    //     evitar.push(i);
+    // }
 
+    let sorteado = [];
+    
     while (sorteado.length < max){
         let nominho = Math.floor(Math.random() * max);
 
         if(!sorteado.includes(nominho))
         sorteado.push(nominho);
+        
+        if(sorteado.length - 1 == sorteado[sorteado.length - 1])
+        sorteado.pop();
     }
 
     return sorteado;
