@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Meu Sorteio</title>
 
     <link rel="stylesheet" href="../CSS/sorteio.css">
+    <link rel="icon" href="../Images/icon.ico">
 </head>
 <body>
     <div class="div-pai">
             <header>
                 <div class="hSide">
-
+                    <a href="home.html">
+                        <img class="hIcon" src="../Images/exit.png">
+                    </a>
                 </div>
 
                 <div class="hCenter">
@@ -18,7 +21,7 @@
                 </div>
 
                 <div class="hSide">
-
+                    <img id="next" class="hIcon" src="../Images/play.png">
                 </div>
 
             </header>
@@ -38,9 +41,9 @@
                         <div class="data">
                             <img class="smalIcon" src="../Images/imgX.png">
                             <a class="font">Apelido:</a>
-                            <input type="text" id="apelido">
+                            <input name="nameField" type="text">
                             <a class="font">Email:</a>
-                            <input type="email" id="email">
+                            <input name="emailField" type="email">
                         </div>
                     </div>
                     
@@ -52,6 +55,6 @@
                 </div>
             </main>
     </div>
-    <script src="../../Back/script.js"></script>
+    <script src="../JavaScript/sorteio.js"></script>
 </body>
 </html>

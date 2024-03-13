@@ -28,6 +28,10 @@ header{
 .hSide{
     width: 15%;
     background-color:  #1B2430;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -68,13 +72,18 @@ main{
 
 
 .icon{
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
 }
 
 .smalIcon{
     width: 20px;
     height: 20px;
+}
+
+.hIcon{
+    width: 40px;
+    height: 40px;
 }
 
 .font{
