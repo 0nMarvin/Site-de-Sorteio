@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+const User = require("../JavaScript/user");
 
 function sorteio(max){
     if (max <= 0){
@@ -23,6 +23,18 @@ function sorteio(max){
 
 function montaLista(nome, email, i, lista){
     lista.push({index: i, nome: nome, email: email});
+    return lista;
+}
+
+function montaLista(users){
+    let lista = [];
+    for(cont = 0, index = 0; cont < users.length; cont++){
+        if(users[cont].valid()){
+            lista.push(new User(index,users[cont].name, users[cont].email))
+            index++
+        }        
+    }
+
     return lista;
 }
 
@@ -56,24 +68,6 @@ function enviarEmail(destino, resultado){
     });
 }
 
-let lista = [];
-let index = 0;
-lista = montaLista("João", "", index, lista);
-index++;
-lista = montaLista("Marcus", "", index, lista);
-index++;
-lista = montaLista("Luquinhas <3", "", index, lista);
-index++;
-lista = montaLista("Joice", "", index, lista);
-index++;
-lista = montaLista("Felippe", "", index, lista);
-index++;
-console.log(lista)
-
-
-let teste = sorteio(lista.length);
-console.log(teste);
-
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -88,4 +82,15 @@ async function executeDelayedCode() {
     }
   }
 
-  executeDelayedCode();
+
+
+const users = [
+    new User(1, "João", "joao@example.com"),
+    new User(2, "Maria", "maris"),
+    new User(3, "José", "jose@example.com"),
+    new User(4, "Ana", "ana@example.com"),
+    new User(5, "Pedro", "pedro@example.com"),
+];
+
+const listaDeUsuariosValidos = montaLista(users);
+console.log(listaDeUsuariosValidos);
